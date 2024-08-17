@@ -18,6 +18,15 @@ export class GUIController{
         return this._instance
     }
 
+    private _getGui = (folderName : string | undefined) => {
+        let gui = this._gui
+        if(foldrName){
+            gui = this._folder(folderName)
+        }else if (this._currentFolderName){
+            gui = this._folder(this._currentFolderName)
+        }
+    }
+
     private _folder = (title: string)=> {
         let _flder = this._gui._folders.find(f =>f._title === title )
         if(!folder) folder = this._gui.addFolder(title)
