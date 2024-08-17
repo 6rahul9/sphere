@@ -32,4 +32,10 @@ export class GUIController{
         if(!folder) folder = this._gui.addFolder(title)
             return folder
     }
+
+    private _uncontainedName = (gui: GUI, name : string) => {
+        return !gui.controllers.find(c => c._name === name)
+    }
+
+        
 }
