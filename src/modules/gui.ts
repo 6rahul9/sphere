@@ -28,7 +28,7 @@ export class GUIController{
     }
 
     private _folder = (title: string) => {
-        let _folder = this._gui.folders.find(f => f._title === title )
+        let folder = this._gui.folders.find(f => f._title === title )
         if(!folder) folder = this._gui.addFolder(title)
             return folder
     }
@@ -55,8 +55,8 @@ export class GUIController{
         obj : object, 
         propertyName : string,
         rgbScale? : number | undefined,
-        displayName? : number | undefined,
-        folderName? : number | undefined
+        displayName? : string | undefined,
+        folderName? : string | undefined
     ) => {
         const controllersName  = displayName ? displayName : propertyName
         const gui = this._getGui(folderName)
@@ -65,4 +65,11 @@ export class GUIController{
             gui.addColor(obj, propertyName, rgbScale).name(controllersName)
         }
     }
+
+    	/**
+	 * add numeric slider controls
+	 * @reference https://lil-gui.georgealways.com/#Guide#Numbers-and-Sliders
+	 */
+
+    
 }
