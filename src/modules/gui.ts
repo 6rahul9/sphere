@@ -51,13 +51,18 @@ export class GUIController{
 	 * @reference https://lil-gui.georgealways.com/#Guide#Colors
 	 */
 
-    addClor =(
+    addColor =(
         obj : object, 
         propertyName : string,
         rgbScale? : number | undefined,
         displayName? : number | undefined,
         folderName? : number | undefined
     ) => {
-        const controllersName  = 
+        const controllersName  = displayName ? displayName : propertyName
+        const gui = this._getGui(folderName)
+
+        if(this._uncontainedName(gui, controllersName)){
+            gui.addColor(obj, propertyName, rgbScale).name(controllersName)
+        }
     }
 }
