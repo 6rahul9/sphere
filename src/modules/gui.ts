@@ -42,5 +42,22 @@ export class GUIController{
         return this
     }
 
-    
+    setOpen = (open : boolean) => {
+        this._getGui(this._currentFolderName).open(open)
+    }
+
+    /**
+	 * add color controls
+	 * @reference https://lil-gui.georgealways.com/#Guide#Colors
+	 */
+
+    addClor =(
+        obj : object, 
+        propertyName : string,
+        rgbScale? : number | undefined,
+        displayName? : number | undefined,
+        folderName? : number | undefined
+    ) => {
+        const controllersName  = 
+    }
 }
