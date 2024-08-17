@@ -37,5 +37,10 @@ export class GUIController{
         return !gui.controllers.find(c => c._name === name)
     }
 
-        
+    setFolder = (name: string) => {
+        this._currentFolderName = name
+        return this
+    }
+
+    
 }
