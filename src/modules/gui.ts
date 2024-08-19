@@ -71,5 +71,23 @@ export class GUIController{
 	 * @reference https://lil-gui.georgealways.com/#Guide#Numbers-and-Sliders
 	 */
 
-    
+    addNumericSlider (  
+        obj : object, 
+        propertyName : string,
+        displayName? : string | undefined,
+        folderName? : string | undefined,
+        min:number,
+        mix:number,
+        step:number 
+    ) =>{
+
+    }
+
+
+
+    addDropDown =(
+
+    ) =>{
+
+    }
 }
