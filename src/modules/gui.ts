@@ -108,4 +108,26 @@ export class GUIController{
             gui.add(obj, propertyName, list).name(controllerName)
         }
     }
+
+
+    /**
+	 * add Button controls
+	 * @description property given by its property name is a callback method.
+	 * @reference https://lil-gui.georgealways.com/#Guide#Saving
+	 */
+
+    addButton =(
+        obj : object, 
+        propertyName : string,
+
+        displayName? : string | undefined,
+        folderName? : string | undefined,
+    ) => {
+        const controllerName  = displayName ? displayName : propertyName
+        const gui = this._getGui(folderName)
+
+        if (this._uncontainedName(gui, controllerName)){
+            gui.add(obj, propertyName).name(controllerName)
+        }
+    }
 }
