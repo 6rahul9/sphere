@@ -74,11 +74,11 @@ export class GUIController{
     addNumericSlider = (  
         obj : object, 
         propertyName : string,
-        displayName? : string | undefined,
-        folderName? : string | undefined,
         min:number,
         mix:number,
-        step:number 
+        step:number,
+        displayName? : string | undefined,
+        folderName? : string | undefined,
     ) => {
         const controllerName = displayName? displayName : propertyName
         const gui = this._getGui(folderName)
@@ -93,12 +93,13 @@ export class GUIController{
 	 * @reference https://lil-gui.georgealways.com/#Guide#Dropdowns
 	 */
 
-    addDropDown =(
+    addDropdown =(
         obj : object, 
         propertyName : string,
+        list:string[] |{ [key: string]: number},
         displayName? : string | undefined,
         folderName? : string | undefined,
-        list:string[] |{ [key: string]: number}
+        
     ) =>{
         const controllerName  = displayName ? displayName : propertyName
         const gui = this._getGui(folderName)
