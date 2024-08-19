@@ -80,7 +80,12 @@ export class GUIController{
         mix:number,
         step:number 
     ) =>{
-
+        const controllerName = displayName ? displayName : propertyName
+        const gui = this._getGui(folderName)
+        
+        if (this._uncontainedName(gui, controllerName)){
+            gui.add(obj, propertyName, mn, mix, step)
+        }
     }
 
 
