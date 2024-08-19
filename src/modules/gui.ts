@@ -25,6 +25,7 @@ export class GUIController{
         }else if (this._currentFolderName){
             gui = this._folder(this._currentFolderName)
         }
+        return gui;
     }
 
     private _folder = (title: string) => {
