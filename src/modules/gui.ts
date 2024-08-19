@@ -88,10 +88,13 @@ export class GUIController{
         }
     }
 
-
+/**
+	 * add dropdown controls
+	 * @reference https://lil-gui.georgealways.com/#Guide#Dropdowns
+	 */
 
     addDropDown =(
-
+        
     ) =>{
 
     }
