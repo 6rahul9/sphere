@@ -59,11 +59,11 @@ export class GUIController{
         displayName? : string | undefined,
         folderName? : string | undefined
     ) => {
-        const controllersName  = displayName ? displayName : propertyName
+        const controllerName  = displayName ? displayName : propertyName
         const gui = this._getGui(folderName)
 
-        if(this._uncontainedName(gui, controllersName)){
-            gui.addColor(obj, propertyName, rgbScale).name(controllersName)
+        if(this._uncontainedName(gui, controllerName)){
+            gui.addColor(obj, propertyName, rgbScale).name(controllerName)
         }
     }
 
@@ -76,7 +76,7 @@ export class GUIController{
         obj : object, 
         propertyName : string,
         min:number,
-        mix:number,
+        max:number,
         step:number,
         displayName? : string | undefined,
         folderName? : string | undefined,
@@ -85,7 +85,7 @@ export class GUIController{
         const gui = this._getGui(folderName)
         
         if (this._uncontainedName(gui, controllerName)){
-            gui.add(obj, propertyName, min, mix, step).name(controllerName)
+            gui.add(obj, propertyName, min, max, step).name(controllerName)
         }
     }
 
