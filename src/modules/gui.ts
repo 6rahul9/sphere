@@ -130,4 +130,28 @@ export class GUIController{
             gui.add(obj, propertyName).name(controllerName)
         }
     }
+
+
+    
+	/**
+	 * add CheckBox controls
+	 * @description property given by its property name is type of boolean.
+	 * @reference https://lil-gui.georgealways.com/#Guide#Adding-Controllers
+	 */
+
+    addCheckBox =(
+        obj : object, 
+        propertyName : string,
+
+        displayName? : string | undefined,
+        folderName? : string | undefined,
+    ) => {
+        const controllerName  = displayName ? displayName : propertyName
+        const gui = this._getGui(folderName)
+
+        if (this._uncontainedName(gui, controllerName)){
+            gui.add(obj, propertyName).name(controllerName)
+        }
+    }
+
 }
