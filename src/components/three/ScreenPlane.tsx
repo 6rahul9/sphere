@@ -15,5 +15,6 @@ export const ScreenPlane: VFC = () => {
         fragmentShader: fragmentShader 
     }
 
+    const vec = new THREE.Vector2()
     
 }
