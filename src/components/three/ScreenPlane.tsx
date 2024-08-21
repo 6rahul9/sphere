@@ -64,5 +64,5 @@ const fragmentShader = `
         return mix (d2, -d1, h) - k*h*(1.0 - h)
     }
 
-    
+    flaot sd
 `
