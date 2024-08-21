@@ -50,4 +50,12 @@ const fragmentShader = `
     ${fresnel}
 
     //polymal smooth min 1 (k=0.1)
+    float simn(flaot a, float b, float k){
+        float h = clamp(0.5+0.5*(b-a)/k, 0.0, 1.0)
+        return mix (b, a, h) - k*h*(1.0 - h)
+    }
+
+    float opUnion (float d1, float d2){return min(d1, d2)}
+    float opUnion (float d1, float d2){return max(-d1, d2)}
+    float opUnion (float d1, float d2){return max(d1, d2)}
 `
