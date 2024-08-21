@@ -128,6 +128,18 @@ const fragmentShader = `
         cLen = 1.0 - smoothstep(0.0, 0.7, cLen);
         color *= vec3(cLen);
 
-        
+        if(totalDist < tMax ){
+            vec3 normal = calcNormal(rayPos);
+            flaot diff = dot(vec3(1.0), normal);
+            
+            flaot d = length(rayPos);
+            d= smoothstep(0.5, 1.0, d);
+            color = mix(vec3(0.0, 1.0, 0.0), vec3(0.00, 0.00, 0.05), d);
+
+            float _fresnel = fresnel (ray, normal);
+            color += vec3(0.00, 0.048, 0.80) *  _fresnel  * 0.8;
+        }        
+
+        gl_FragColor = vec4(color, 1.0);
     }
 `
