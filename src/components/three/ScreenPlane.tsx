@@ -46,5 +46,8 @@ const fragmentShader = `
 
     const float PI = 3.14159265358979;
 
-    $
+    ${rotate}
+    ${fresnel}
+
+    //polymal smooth min 1 (k=0.1)
 `
