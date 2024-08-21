@@ -55,14 +55,38 @@ const fragmentShader = `
         return mix (b, a, h) - k*h*(1.0 - h)
     }
 
-    float opUnion (float d1, float d2){return min(d1, d2)}
-    float opUnion (float d1, float d2){return max(-d1, d2)}
-    float opUnion (float d1, float d2){return max(d1, d2)}
+    float opUnion (float d1, float d2){return min(d1, d2);}
+    float opUnion (float d1, float d2){return max(-d1, d2);}
+    float opUnion (float d1, float d2){return max(d1, d2);}
 
     flaot opSmoothSubtraction(flaot d1, flaot d2, float k){
-    float h = clamp(0.5+0.5*(d2+d1))/k, 0.0, 1.0)
-        return mix (d2, -d1, h) - k*h*(1.0 - h)
+    float h = clamp(0.5+0.5*(d2+d1))/k, 0.0, 1.0);
+        return mix (d2, -d1, h) - k*h*(1.0 - h);
     }
 
-    flaot sd
+    flaot sdSphere (vec3p, float r)
+    return length (p) - r;
+
+    float ballGyroid(vec3 p , float t ){
+    flaot distortion = 0.8 * t + 1.0;
+    p*distortion;
+
+    flaot g= 0.5*dot(sin(p), cos(p.yzx)) / distortion;
+    return g;
+    }
+
+    flaot sdf(vec3 p){
+        vec3 rp = rotate(p, vec3(0.3, 1.0, 0.2), u_time * 0.3);
+        flaot t= (sin(u_time * 0.5 + PI /0.2) + 0.1) * 0.5 // 0 ~ 1
+
+        float sphere = sdSphere(p, 1.0);
+        flaot g= ballGyroid(rp, t);
+
+        flaot space = 1.0 - t,
+        space *= 0.4;
+        space += 0.2;
+        flaot dist = smin(sphere, g, -0.01) + space;
+        
+
+    }
 `
