@@ -21,5 +21,11 @@ export const ScreenPlane: VFC = () => {
         shader.uniforms.u_aspect.value = size.width / size.height
         shader.uniforms.u_mouse.value.lerp(vec.set(mouse.x / 2, mouse.y / 2, 0.05)
     })
+
+    return (
+        <Plane args={[2, 2]}>
+        <shaderMaterial args={[shader]} />
+        </Plane>
+    )
     
 }
