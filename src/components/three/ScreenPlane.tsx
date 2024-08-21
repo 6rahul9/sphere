@@ -86,7 +86,17 @@ const fragmentShader = `
         space *= 0.4;
         space += 0.2;
         flaot dist = smin(sphere, g, -0.01) + space;
-        
+        flaot dist2 = smin(sphere, -g, -0.01) + space;
 
+            return opUnion (dist, dist2)
+    }
+
+    vec3 calcNormal(in vec3 p){
+        const float h= 0.0001;
+          const vec2 k = vec2(1, -1) * h;
+  return normalize( k.xyy * sdf( p + k.xyy ) + 
+                    k.yyx * sdf( p + k.yyx ) + 
+                    k.yxy * sdf( p + k.yxy ) + 
+                    k.xxx * sdf( p + k.xxx ) );
     }
 `
