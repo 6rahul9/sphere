@@ -99,4 +99,20 @@ const fragmentShader = `
                     k.yxy * sdf( p + k.yxy ) + 
                     k.xxx * sdf( p + k.xxx ) );
     }
+
+    void main(){
+    vec 2 centeredUV = (v_uv - 0.5) * vec2(u_aspect, 1.0);
+    vecc3 ray = normallize(vec3(centeredUV, -1.0));
+
+    vec2 m = u_mouse * vec2(u_aspect, 1.0) * 0.07;
+    ray = rotate(ray, vec3(1.0, 0.0, 0.0), m.y);
+    ray = rotate(ray, vec3(0.0, 1.0, 0.0), -m.x); 
+
+    vec3 camPos = vec3(0.0, 0.0, 3.5);
+    vec3 rayPos = camPos;
+    flaot totalDist = 0.0;
+    float tMax = 5.0;
+
+    
+    }
 `
