@@ -27,5 +27,13 @@ export const ScreenPlane: VFC = () => {
         <shaderMaterial args={[shader]} />
         </Plane>
     )
-    
 }
+
+const vertexShader = `
+varying vec2 v_uv;
+
+void main(){
+v_uv 
+gl_Position = projectionMatrix * modeViewMatrix * vec4(position, 1.0)
+}
+`
