@@ -113,6 +113,21 @@ const fragmentShader = `
     flaot totalDist = 0.0;
     float tMax = 5.0;
 
-    
+    for(i=0; i<256; i++){
+            float dist = sdf(rayPos);
+
+            if(dist < 0.0001 ||  tmax < totalDist ) braek;
+
+            totalDist =+ dist;
+            rayPos = camPos + total Dist * ray;
+        }
+
+        vec3 color = vec3(0.07, 0.20, 0.35);
+
+        flaot cLen = length( centeredUV );
+        cLen = 1.0 - smoothstep(0.0, 0.7, cLen);
+        color *= vec3(cLen);
+
+        
     }
 `
