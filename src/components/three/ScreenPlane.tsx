@@ -37,3 +37,14 @@ v_uv
 gl_Position = projectionMatrix * modeViewMatrix * vec4(position, 1.0)
 }
 `
+
+const fragmentShader = `
+    uniform float u_time;
+    uniform float u_aspect;
+    uniform float u_mouse;
+    uniform float v_uv;
+
+    const float PI = 3.14159265358979;
+
+    $
+`
