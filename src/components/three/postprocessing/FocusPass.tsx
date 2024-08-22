@@ -12,8 +12,8 @@ const datas = {
     samples: 20
 }
 
-export const Focuspass : VFC = () =>{
-    const passRef = useref<ShaderPass>(null)
+export const FocusPass : VFC = () =>{
+    const passRef = useRef<ShaderPass>(null)
 
     const gui = GUIController.instance.setFolder('Focus')
     gui.setOpen(false);
@@ -45,4 +45,30 @@ export const Focuspass : VFC = () =>{
     }
 
     
+    useFrame(({}) =>{
+        update()
+    })
+
+    return <shaderPass ref={passRef} attachArray='passes' args={[shader]} />
+
+    const vertexShader = `
+        varying vec2 v_uv;
+        void main (){
+            v_uv = uv;
+            gl_Position = projectionMatrix * modelViewmatrix * vec4(position, 1.0);
+        }
+    `
+
+    const fragmentShader = `
+        uniform sampler2D tDiffuse;
+        uniform float u_focus;
+        uniform float u_blur;
+        uniform float u_samples;
+        varying vec2 v_vu;
+
+        const int MAX_ SAMPLES = 100;
+        const float PI = 3.14159265358979;
+
+        
+    `
 }
