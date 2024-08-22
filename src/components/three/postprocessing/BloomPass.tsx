@@ -23,7 +23,7 @@ export const BloomPass : VFC = () =>{
     gui.addCheckBox(datas, 'enabled')
     gui.addNumericSlider(datas, 'exposure', 0.1, 2, 0.01)
     gui.addNumericSlider(datas, 'strength', 0, 10, 0.1)
-    gui.addNumericSlider(datas, 'radius', 1, 2, 0.01)
+    gui.addNumericSlider(datas, 'radius', 0, 2, 0.01)
     gui.addNumericSlider(datas, 'threshold', 0, 1, 0.01)
     
     const update = (gl: THREE.WebGLRenderer) => {
