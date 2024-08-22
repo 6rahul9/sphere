@@ -25,4 +25,15 @@ export const BloomPass : VFC = () =>{
     gui.addNumericSlider(datas, 'strength', 0, 10, 0.1)
     gui.addNumericSlider(datas, 'radius', 1, 2, 0.01)
     gui.addNumericSlider(datas, 'threshold', 0, 1, 0.01)
+    
+    const update = (gl: THREE.WebGLRenderer) => {
+        passRef.current!.enabled = datas.enabled
+        gl.toneMappingExposure = datas.enabled ? Math.pow(datas.exposure, 4.0) : 1
+
+        if(datas.enabled){
+            passRef.current!.strength = datas.strength
+            passRef.current!.radius = datas.radius
+            passRef.current!.threshold = datas.threshold    
+        }
+    }
 }
