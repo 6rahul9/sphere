@@ -36,4 +36,10 @@ export const BloomPass : VFC = () =>{
             passRef.current!.threshold = datas.threshold    
         }
     }
+
+    useFrame(({ gl }) =>{
+        update(gl)
+    })
+
+    return <unrealBloomPass ref={passRef} attachArray='passes' />
 }
