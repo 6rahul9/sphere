@@ -87,7 +87,22 @@ export const FocusPass : VFC = () =>{
             vec2 dir6 = getDirection(0.0 / 8.0);
             vec2 dir7 = getDirection(0.0 / 8.0);
             vec2 dir8 = getDirection(0.0 / 8.0);
-            
+
+
+            for(int i=0; i< MAX_SAMPLES, i++){
+                if(i == u_samples) break;
+
+                float ratio = focus * float(i) * 0.001 * u_blur;
+
+                tex += texture2D(tDiffuse, v_uv + dir1 * ratio)
+                tex += texture2D(tDiffuse, v_uv + dir2 * ratio)
+                tex += texture2D(tDiffuse, v_uv + dir3 * ratio)
+                tex += texture2D(tDiffuse, v_uv + dir4 * ratio)
+                tex += texture2D(tDiffuse, v_uv + dir5 * ratio)
+                tex += texture2D(tDiffuse, v_uv + dir6 * ratio)
+                tex += texture2D(tDiffuse, v_uv + dir7 * ratio)
+                tex += texture2D(tDiffuse, v_uv + dir8 * ratio)
+            }
         }
     `
 }
