@@ -4,6 +4,7 @@ import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass";
 import { ShaderPass } from "three/examples/jsm/postprocessing/ShaderPass";
 import { GammaCorrectionShader } from 'three/examples/jsm/shaders/GammaCorrectionShader'
 import { extend ,useFrame, useThree } from "@react-three/fiber";
+import { Camera, Scene } from "three";
 
 extend ({ EffectComposer, RenderPass, ShaderPass})
 
@@ -27,6 +28,10 @@ export const Effects : VFC<EffectsProps> = props =>{
     }, 1)
 
     return(
-        <EffectComposer ref={composerRef} args={[gl]} >
+        <effectComposer ref={composerRef} args={[gl]}>
+            <renderPass attachArray="passes" args={[scene, camera]}/>
+            {sRGBCorrection && <shaderPass attachArray="passes" args={[GammaCorrectionShader]} />}
+            {children}
+        </effectComposer>
     )
 }
