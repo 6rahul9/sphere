@@ -45,12 +45,12 @@ export const FocusPass : VFC = () =>{
     }
 
     
-    useFrame(({}) =>{
+    useFrame(() =>{
         update()
     })
 
     return <shaderPass ref={passRef} attachArray='passes' args={[shader]} />
-
+}
     const vertexShader = `
         varying vec2 v_uv;
         void main (){
@@ -103,6 +103,7 @@ export const FocusPass : VFC = () =>{
                 tex += texture2D(tDiffuse, v_uv + dir7 * ratio)
                 tex += texture2D(tDiffuse, v_uv + dir8 * ratio)
             }
+                tex/= float(U-samples) * 0.8;
+                gl_FragColor = tex;
         }
     `
-}
