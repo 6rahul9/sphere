@@ -34,5 +34,15 @@ export const Focuspass : VFC = () =>{
         fragmentShader : fragmentShader
     }
 
+    cosnt update = () => {
+        passRef.current!.enabled = datas.enabled
+
+        if(datas.enabled){
+            passRef.current!.uniforms.u_focus.value = datas.focus
+            passRef.current!.uniforms.u_blur.value = datas.blur
+            passRef.current!.uniforms.u_samples.value = datas.samples
+        }
+    }
+
     
 }
