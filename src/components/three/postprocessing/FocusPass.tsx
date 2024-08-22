@@ -18,10 +18,21 @@ export const Focuspass : VFC = () =>{
     const gui = GUIController.instance.setFolder('Focus')
     gui.setOpen(false);
     gui.addCheckBox(datas, 'enabled')
-    gui.addNumericSlider(datas, 'exposure', -0.5, 0.5, 0.01)
-    gui.addNumericSlider(datas, 'strength', 0, 1, 0.01)
+    gui.addNumericSlider(datas, 'focus', -0.5, 0.5, 0.01)
+    gui.addNumericSlider(datas, 'blur', 0, 1, 0.01)
 
-    gui.addNumericSlider(datas, 'threshold', 10, 100, 10)
+    gui.addNumericSlider(datas, 'samples', 10, 100, 10)
+
+    const shader : THREE.Shader = {
+        uniforms : {
+            tDiffuse : { value : null},
+            u_focus : { value: datas.focus },
+            u_blur : { value: datas.blur },
+            u_samples : { value: datas.samples },
+        },
+        vertexShader : vertexShader,
+        fragmentShader : fragmentShader
+    }
 
     
 }
