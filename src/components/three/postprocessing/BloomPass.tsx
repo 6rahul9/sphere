@@ -3,6 +3,7 @@ import * as THREE from 'three';
 import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass';
 import { extend, useFrame } from '@react-three/fiber'
 import { GUIController } from '../../../modules/gui'
+import exp from 'constants';
 
 extend({ UnrealBloomPass })
 
@@ -14,3 +15,7 @@ const datas = {
     threshold: 0.6
 }
 
+export const BloomPass : VFC = () =>{
+    const passRef = useRef<UnrealBloomPass>(null)
+    
+}
