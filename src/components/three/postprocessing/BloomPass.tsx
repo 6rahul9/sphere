@@ -5,3 +5,12 @@ import { extend, useFrame } from '@react-three/fiber'
 import { GUIController } from '../../../modules/gui'
 
 extend({ UnrealBloomPass })
+
+const datas = {
+    enabled: true,
+    exposure: 0.7,
+    strength: 2,
+    radius: 0.2,
+    threshold: 0.6
+}
+
