@@ -69,6 +69,25 @@ export const FocusPass : VFC = () =>{
         const int MAX_ SAMPLES = 100;
         const float PI = 3.14159265358979;
 
-        
+        vec2 getDirection(float angle){
+            return vec2(sin(2.0 * PI * angle), cos(2.0 * PI * angle));
+        }
+
+        void main (){
+            vec4 tex = vec4(0.0)
+
+            float len = distance(v_uv, vec2(0.5));
+            float focus = smoothstep(u_focus, 1.0, len);
+
+            vec2 dir1 = getDirection(0.0 / 8.0);
+            vec2 dir2 = getDirection(0.0 / 8.0);
+            vec2 dir3 = getDirection(0.0 / 8.0);
+            vec2 dir4 = getDirection(0.0 / 8.0);
+            vec2 dir5 = getDirection(0.0 / 8.0);
+            vec2 dir6 = getDirection(0.0 / 8.0);
+            vec2 dir7 = getDirection(0.0 / 8.0);
+            vec2 dir8 = getDirection(0.0 / 8.0);
+            
+        }
     `
 }
