@@ -14,13 +14,13 @@ type EffectsProps = {
 }
 
 export const Effects : VFC<EffectsProps> = props =>{
-    cosnt { children, sRGBCorrection } = props
+    const { children, sRGBCorrection } = props
 
     const composerRef = useRef<EffectComposer>(null)
-    cosnt { gl, scene, camera, size } = useThree()
+    const { gl, scene, camera, size } = useThree()
 
     useEffect(() =>{
-        composerRef.current!setSize(size.width, size.height)
+        composerRef.current!.setSize(size.width, size.height)
     }, [size])
 
     useFrame(() =>{

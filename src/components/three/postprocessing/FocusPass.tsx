@@ -34,7 +34,7 @@ export const FocusPass : VFC = () =>{
         fragmentShader : fragmentShader
     }
 
-    cosnt update = () => {
+    const update = () => {
         passRef.current!.enabled = datas.enabled
 
         if(datas.enabled){
