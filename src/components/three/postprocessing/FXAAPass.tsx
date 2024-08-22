@@ -25,5 +25,16 @@ export const FXAAPass : VFC = () =>{
         if(datas.enabled){}
     }
 
-    
+    useFrame(() =>{
+        update()
+    })
+
+    return(
+        <shaderPass 
+            ref={passRef}
+            attachArray='passes'
+            args={[FXAAShader]}
+            uniforms-resolution-value={[1 /size.width, 1 / size.height]}
+        />
+    ) 
 }
