@@ -5,3 +5,13 @@ import { extend ,useFrame, useThree } from "@react-three/fiber";
 import { GUIController } from '../../../modules/gui';
 
 extend({ShaderPass})
+
+const datas = {
+    enabled: true
+}
+export const FXAAPass : VFC = () =>{
+    const passRef = useRef<ShaderPass>(null)
+    const {  size } = useThree()
+
+    const gui = 
+}
