@@ -109,11 +109,12 @@
 //     `
 
 
-import React, { useRef, VFC } from 'react';
+import React, { useRef, VFC, forwardRef } from 'react';
 import THREE from 'three';
 import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass';
 import { useFrame } from '@react-three/fiber';
 import { GUIController } from '../../../modules/gui';
+
 
 const datas = {
 	enabled: true,

@@ -37,7 +37,7 @@
 // }
 
 
-import { useEffect, useRef, VFC } from 'react';
+import { useEffect, useRef, VFC, forwardRef } from 'react';
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer';
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass';
 import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass';
