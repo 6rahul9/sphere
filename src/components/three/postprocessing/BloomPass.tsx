@@ -108,6 +108,9 @@ import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPa
 import { extend, useFrame } from '@react-three/fiber';
 import { GUIController } from '../../../modules/gui';
 
+// Add this to the top of BloomPass.tsx
+export {};
+
 extend({ UnrealBloomPass })
 
 const datas = {
