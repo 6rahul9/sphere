@@ -1,7 +1,7 @@
 
 
 
-import React, { useState, VFC } from 'react';
+import React, { useState, FC } from 'react';
 
 type LinkIconButtonProps = {
 	/**
@@ -23,7 +23,7 @@ type LinkIconButtonProps = {
 	size?: [number, number]
 }
 
-export const LinkIconButton: VFC<LinkIconButtonProps> = props => {
+export const LinkIconButton: FC<LinkIconButtonProps> = props => {
 	const { imagePath, linkPath, position = 'bottom-right', size = [50, 50] } = props
 	const [hover, setHover] = useState(false)
 

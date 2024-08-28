@@ -1,8 +1,8 @@
-import React, { VFC } from 'react'
+import React, { FC } from 'react'
 import { LinkIconButton } from './LinkIconButton'
 import { TCanvas } from './three/TCanvas'
 
-export const App : VFC = () => {
+export const App : FC = () => {
     return(
         <div style={{width: '100vw', height: '100vh'}}>
             <TCanvas />

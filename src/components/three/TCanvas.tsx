@@ -1,6 +1,6 @@
 
 
-import { VFC } from 'react';
+import { FC } from 'react';
 import * as THREE from 'three';
 import { Stats } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
@@ -10,7 +10,7 @@ import { FocusPass } from './postprocessing/FocusPass';
 import { FXAAPass } from './postprocessing/FXAAPass';
 import { ScreenPlane } from './ScreenPlane';
 
-export const TCanvas: VFC = () => {
+export const TCanvas: FC = () => {
 	const OrthographicCamera = new THREE.OrthographicCamera(-1, 1, 1, -1, -10, 10)
 
 	return (

@@ -1,7 +1,7 @@
 
 
 
-import React, { useRef, VFC, forwardRef } from 'react';
+import React, { useRef, FC, forwardRef } from 'react';
 import THREE from 'three';
 import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass';
 import { useFrame } from '@react-three/fiber';
@@ -15,7 +15,7 @@ const datas = {
 	samples: 20
 }
 
-export const FocusPass: VFC = () => {
+export const FocusPass: FC = () => {
 	const passRef = useRef<ShaderPass>(null)
 
 	const gui = GUIController.instance.setFolder('Focus')

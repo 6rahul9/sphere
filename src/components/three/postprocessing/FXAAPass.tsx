@@ -1,7 +1,7 @@
 
 
 
-import { useRef, VFC } from 'react';
+import { useRef, FC } from 'react';
 import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass';
 import { FXAAShader } from 'three/examples/jsm/shaders/FXAAShader';
 import { extend, useFrame, useThree } from '@react-three/fiber';
@@ -13,7 +13,7 @@ const datas = {
 	enabled: true
 }
 
-export const FXAAPass: VFC = () => {
+export const FXAAPass: FC = () => {
 	const passRef = useRef<ShaderPass>(null)
 	const { size } = useThree()
 

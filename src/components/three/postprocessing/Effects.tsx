@@ -1,7 +1,7 @@
 
 
 
-import { useEffect, useRef, VFC, forwardRef } from 'react';
+import { useEffect, useRef, FC, forwardRef } from 'react';
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer';
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass';
 import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass';
@@ -15,7 +15,7 @@ type EffectsProps = {
 	sRGBCorrection?: boolean
 }
 
-export const Effects: VFC<EffectsProps> = props => {
+export const Effects: FC<EffectsProps> = props => {
 	const { children, sRGBCorrection } = props
 
 	const composerRef = useRef<EffectComposer>(null)

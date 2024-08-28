@@ -1,5 +1,5 @@
 
-import React, { useRef, VFC } from 'react';
+import React, { useRef, FC } from 'react';
 import * as THREE from 'three';
 import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass';
 import { extend, useFrame } from '@react-three/fiber';
@@ -18,7 +18,7 @@ const datas = {
 	threshold: 0.6
 }
 
-export const BloomPass: VFC = () => {
+export const BloomPass: FC = () => {
 	const passRef = useRef<UnrealBloomPass>(null)
 
 	const gui = GUIController.instance.setFolder('Bloom')

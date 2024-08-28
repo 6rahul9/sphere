@@ -1,12 +1,12 @@
 
 
-import React, { VFC } from 'react';
+import React, { FC } from 'react';
 import * as THREE from 'three';
 import { Plane } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import { fresnel, rotate } from '../../modules/glsl';
 
-export const ScreenPlane: VFC = () => {
+export const ScreenPlane: FC = () => {
 	const shader: THREE.Shader = {
 		uniforms: {
 			u_time: { value: 0 },
