@@ -90,5 +90,7 @@ export const BloomPass: VFC = () => {
 		update(gl)
 	})
 
-	return <unrealBloomPass ref={passRef} attachArray="passes" />
+	// return <unrealBloomPass ref={passRef} attachArray="passes" />
+	return <unrealBloomPass ref={passRef as any} attachArray="passes" />;
+
 }
